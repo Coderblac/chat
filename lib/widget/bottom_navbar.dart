@@ -1,10 +1,9 @@
-import 'package:chatapp/screens/Chat.dart';
-import 'package:chatapp/user%20pages/chat_list.dart';
-import 'package:chatapp/screens/homepage.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import '../screens/homepage.dart';
+import '../screens/profile.dart';
+import '../user pages/chat_list.dart';
 
 class Nav extends StatefulWidget {
   @override
@@ -22,7 +21,7 @@ class _NavState extends State<Nav> {
       HomePage(),
       ChatList(),
       ChatList(),
-      ChatList(),
+      Profile(),
     ];
     super.initState();
   }
@@ -48,7 +47,7 @@ class _NavState extends State<Nav> {
       }
       if (currentIndex == 3) {
         Navigator.push(context, MaterialPageRoute(builder: (_) {
-          return ChatList();
+          return const Profile();
         }));
       }
     });

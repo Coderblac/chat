@@ -7,7 +7,7 @@ final User currentUser = User(
 );
 
 final List<User> onlineUsers = [
-  const User(
+  User(
     name: 'David Brooks',
     imageUrl:
         'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',

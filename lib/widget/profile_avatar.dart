@@ -22,7 +22,6 @@ class ProfileAvatar extends StatelessWidget {
           backgroundColor: Colors.white,
           child: CircleAvatar(
             radius: hasBordrer ? 18 : 20.0,
-            // backgroundColor: Colors.grey.shade200,
             backgroundImage: CachedNetworkImageProvider(imageUrl),
           ),
         ),

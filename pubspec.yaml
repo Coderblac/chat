@@ -41,6 +41,8 @@ dependencies:
   contacts_service: ^0.6.3
   material_design_icons_flutter: ^6.0.7096
   cached_network_image: ^3.2.3
+  image_picker: ^0.8.7+4
+  firebase_storage: ^11.1.2
   # agora_rtc_engine: ^4.0.9
 
 dev_dependencies:

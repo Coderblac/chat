@@ -1,15 +1,11 @@
-import 'package:chatapp/config/palette.dart';
 import 'package:chatapp/data/data.dart';
 import 'package:chatapp/models/models.dart';
 import 'package:chatapp/widget/bottom_navbar.dart';
 import 'package:chatapp/widget/circle_btn.dart';
 import 'package:chatapp/widget/stories.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
 import '../widget/create_post.dart';
 import '../widget/post_cont.dart';
-import '../widget/rooms.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -22,9 +18,9 @@ class HomePage extends StatelessWidget {
           SliverAppBar(
             brightness: Brightness.light,
             backgroundColor: Color.fromRGBO(18, 19, 26, 1),
-            title: Text(
+            title: const Text(
               'ChatApp',
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
