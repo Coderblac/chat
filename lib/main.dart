@@ -1,4 +1,7 @@
-import 'package:chatapp/home.dart';
+import 'package:chatapp/Chat.dart';
+import 'package:chatapp/bottom_navbar.dart';
+import 'package:chatapp/homepage.dart';
+import 'package:chatapp/user%20pages/main_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -39,7 +42,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, home: Home(),
+      debugShowCheckedModeBanner: false, home: MainPageLogin(),
       // HiddenDrawer(),
       // theme: ThemeData.light(),
       // darkTheme: ThemeData.dark(),
