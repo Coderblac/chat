@@ -1,4 +1,4 @@
-import 'package:chatapp/bottom_navbar.dart';
+import 'package:chatapp/widget/bottom_navbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -33,34 +33,34 @@ class _HomePageState extends State<HomePage> {
   List drawerItems = [
     {
       'name': 'Profile',
-      'icon': Icon(Icons.person_outline, color: Colors.black)
+      'icon': Icon(Icons.person_outline, color: Colors.white)
     },
-    {'name': 'List', 'icon': Icon(Icons.list_outlined, color: Colors.black)},
-    {'name': 'Topics', 'icon': Icon(Icons.topic_outlined, color: Colors.black)},
+    {'name': 'List', 'icon': Icon(Icons.list_outlined, color: Colors.white)},
+    {'name': 'Topics', 'icon': Icon(Icons.topic_outlined, color: Colors.white)},
     {
       'name': 'Bookmarks',
-      'icon': Icon(Icons.bookmark_outlined, color: Colors.black)
+      'icon': Icon(Icons.bookmark_outlined, color: Colors.white)
     },
-
-    {'name': 'Moments', 'icon': Icon(Icons.star_outline, color: Colors.black)},
+    {'name': 'Moments', 'icon': Icon(Icons.star_outline, color: Colors.white)},
     {
       'name': 'Settings and Privacy',
-      'icon': Icon(Icons.settings_outlined, color: Colors.black)
+      'icon': Icon(Icons.settings_outlined, color: Colors.white)
     },
     {
       'name': 'Help Center',
-      'icon': Icon(Icons.help_center_outlined, color: Colors.black)
+      'icon': Icon(Icons.help_center_outlined, color: Colors.white)
     },
-    // {'name': 'LogOut', 'icon': Icon(Icons.logout, color: Colors.black)},
+    {'name': 'LogOut', 'icon': Icon(Icons.logout, color: Colors.white)},
   ];
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Color.fromRGBO(18, 19, 26, 1),
       bottomNavigationBar: Nav(),
       drawer: Drawer(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(18, 19, 26, 1),
         child: SafeArea(
           child: Container(
             // decoration: BoxDecoration(
@@ -93,8 +93,12 @@ class _HomePageState extends State<HomePage> {
                           CircleAvatar(),
                           Row(
                             children: [
-                              Text(FirebaseAuth.instance.currentUser!.email
-                                  .toString()),
+                              Text(
+                                FirebaseAuth.instance.currentUser!.email
+                                    .toString(),
+                                style: TextStyle(
+                                    color: Colors.white.withOpacity(0.8)),
+                              ),
                               SizedBox(
                                 width: 5,
                               ),
@@ -117,7 +121,7 @@ class _HomePageState extends State<HomePage> {
 
                 Container(
                   margin: EdgeInsets.zero,
-                  height: size.height * 0.52,
+                  height: size.height * 0.6,
                   child: ListView.builder(
                       itemCount: drawerItems.length,
                       itemBuilder: (context, index) {
@@ -125,9 +129,15 @@ class _HomePageState extends State<HomePage> {
                           minVerticalPadding: 0,
                           contentPadding:
                               EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-                          title: Text(drawerItems[index]['name']),
+                          title: Text(
+                            drawerItems[index]['name'],
+                            style: TextStyle(color: Colors.white),
+                          ),
                           leading: drawerItems[index]['icon'],
-                          trailing: Icon(Icons.arrow_right_outlined),
+                          trailing: Icon(
+                            Icons.arrow_right_outlined,
+                            color: Colors.white,
+                          ),
                           onTap: () {
                             if (index == 0) {
                             } else if (index == 1) {
@@ -135,7 +145,10 @@ class _HomePageState extends State<HomePage> {
                             } else if (index == 3) {
                             } else if (index == 4) {
                             } else if (index == 5) {
-                            } else if (index == 6) {}
+                            } else if (index == 6) {
+                            } else if (index == 7) {
+                              FirebaseAuth.instance.signOut();
+                            }
                           },
                         );
                       }),
@@ -151,8 +164,8 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
         elevation: 1,
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Color.fromRGBO(18, 19, 26, 1),
         title: SizedBox(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -163,16 +176,23 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: GestureDetector(
-              onTap: () {
-                FirebaseAuth.instance.signOut();
-              },
+              onTap: () {},
               child: Icon(
-                Icons.logout,
+                Icons.notifications,
               ),
             ),
-          )
+          ),
         ],
       ),
+      body: SafeArea(
+          child: Column(
+        children: [
+          Container(
+            color: Colors.white,
+            height: 100,
+          ),
+        ],
+      )),
     );
   }
 }

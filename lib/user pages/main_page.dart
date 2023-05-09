@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, dead_code
 
-import 'package:chatapp/homepage.dart';
+import 'package:chatapp/screens/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

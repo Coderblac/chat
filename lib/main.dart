@@ -1,6 +1,7 @@
-import 'package:chatapp/Chat.dart';
-import 'package:chatapp/bottom_navbar.dart';
-import 'package:chatapp/homepage.dart';
+import 'package:chatapp/config/palette.dart';
+import 'package:chatapp/widget/bottom_navbar.dart';
+import 'package:chatapp/screens/homepage.dart';
+import 'package:chatapp/pages/loadscreen.dart';
 import 'package:chatapp/user%20pages/main_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -42,11 +43,12 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, home: MainPageLogin(),
-      // HiddenDrawer(),
-      // theme: ThemeData.light(),
-      // darkTheme: ThemeData.dark(),
-      // themeMode: ThemeMode.dark,
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+      theme: ThemeData(
+          primaryColor: Colors.black,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          scaffoldBackgroundColor: Palette.scaffold),
     );
   }
 }

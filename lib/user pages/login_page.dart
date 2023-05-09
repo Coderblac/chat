@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromRGBO(18, 19, 26, 1),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -64,27 +64,25 @@ class _LoginPageState extends State<LoginPage> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    GestureDetector(
-                      child: Text('Login',
-                          style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white)),
-                    ),
+                    Text('Sign In',
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white)),
                   ],
                 ),
                 SizedBox(height: 30),
 
-                Text(
-                  'Welcome ☺',
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.white),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
+                // Text(
+                //   'Welcome ☺',
+                //   style: TextStyle(
+                //       fontSize: 14,
+                //       fontWeight: FontWeight.w300,
+                //       color: Colors.white),
+                // ),
+                // SizedBox(
+                //   height: 50,
+                // ),
 
                 // email textfield
                 Padding(
@@ -190,7 +188,7 @@ class _LoginPageState extends State<LoginPage> {
                     GestureDetector(
                       onTap: widget.showRegisterPage,
                       child: Text(
-                        ' Register Now',
+                        ' Sign Up Now',
                         style: TextStyle(
                             color: Colors.pink, fontWeight: FontWeight.bold),
                       ),
